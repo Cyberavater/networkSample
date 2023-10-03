@@ -1,0 +1,10 @@
+This is a very basic DNS server and does not include many features that a full DNS server
+would have, such as caching, recursion, DNSSEC, etc.
+
+`dnslib.QTYPE.A` is a constant in the `dnslib` library that represents the DNS record type `A`.
+
+In the Domain Name System (DNS), `A` records are used to map hostnames to IPv4 addresses. So when you see `dnslib.QTYPE.A` in the code, it's specifying that we're dealing with `A` records.
+
+For example, in the line `if dns_data.q.qtype == dnslib.QTYPE.A`, it's checking if the query type of the DNS request is for an `A` record. If it is, then the server will respond with the corresponding IP address. If not, it will return `NXDOMAIN`, which stands for Non-Existent Domain, indicating that the requested domain does not exist. 
+
+There are many other types of DNS records as well, such as `AAAA` for IPv6 addresses, `CNAME` for canonical names, `MX` for mail exchanges, and so on. Each of these has a corresponding constant in `dnslib`, like `dnslib.QTYPE.AAAA`, `dnslib.QTYPE.CNAME`, and `dnslib.QTYPE.MX`.
